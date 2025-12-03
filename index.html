@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="zh-Hant">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>petit matin atelier</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600&display=swap');
+    
+    body {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .app-container {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #c4b5a0 #e7e4d9;
+    }
+    
+    .app-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .app-container::-webkit-scrollbar-track {
+      background: #e7e4d9;
+    }
+    
+    .app-container::-webkit-scrollbar-thumb {
+      background-color: #c4b5a0;
+      border-radius: 9999px;
+    }
+    
+    .store-title {
+      font-family: 'Sylfaen', 'Noto Sans TC', serif;
+      letter-spacing: 0.15em;
+    }
+    
+    .nav-blur {
+      background-color: rgba(231, 228, 217, 0.97);
+      backdrop-filter: blur(10px);
+    }
+    
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(43, 30, 21, 0.08);
+    }
+    
+    .focus-outline:focus-visible {
+      outline: 2px solid #2b1e15;
+      outline-offset: 2px;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body>
+  <div id="app" class="app-container" style="background-color: #e7e4d9; color: #2b1e15;"><!-- Header -->
+   <header class="w-full nav-blur border-b sticky top-0 z-20" style="border-color: #d4cfc0;" role="banner">
+    <div class="max-w-7xl mx-auto px-3 sm:px-4 py-3"><!-- 店名置中 -->
+     <div class="text-center mb-3">
+      <h1 id="site-title" class="store-title text-xl sm:text-2xl md:text-3xl font-light lowercase">petit matin atelier</h1>
+      <p id="site-subtitle" class="text-xs sm:text-sm tracking-[0.15em] mt-1" style="color: #5a4d3f;">Beauty · Care · Wellness</p>
+     </div><!-- 導航選單 -->
+     <nav class="w-full overflow-x-auto overflow-y-hidden" aria-label="主要分頁選單" style="scrollbar-width: thin; scrollbar-color: #c4b5a0 transparent; -webkit-overflow-scrolling: touch;">
+      <ul class="flex gap-1 sm:gap-1.5 text-[10px] sm:text-xs whitespace-nowrap pb-2 min-w-max">
+       <li><button type="button" data-tab="nails" class="tab-btn focus-outline px-2.5 sm:px-3 py-1.5 rounded-full border border-transparent tracking-[0.08em]"> 美甲價目表 </button></li>
+       <li><button type="button" data-tab="brows" class="tab-btn focus-outline px-2.5 sm:px-3 py-1.5 rounded-full border border-transparent tracking-[0.08em]"> 紋繡價目表 </button></li>
+       <li><button type="button" data-tab="ft" class="tab-btn focus-outline px-2.5 sm:px-3 py-1.5 rounded-full border border-transparent tracking-[0.08em]"> 美國FT養色 </button></li>
+       <li><button type="button" data-tab="hydra" class="tab-btn focus-outline px-2.5 sm:px-3 py-1.5 rounded-full border border-transparent tracking-[0.08em]"> 無創基因水光 </button></li>
+       <li><button type="button" data-tab="notice" class="tab-btn focus-outline px-2.5 sm:px-3 py-1.5 rounded-full border border-transparent tracking-[0.08em]"> 預約須知 </button></li>
+       <li><button type="button" data-tab="booking" class="tab-btn focus-outline px-2.5 sm:px-3 py-1.5 rounded-full border border-transparent tracking-[0.08em]"> 預約方式 </button></li>
+       <li><button type="button" data-tab="shop" class="tab-btn focus-outline px-2.5 sm:px-3 py-1.5 rounded-full border border-transparent tracking-[0.08em]"> 線上購物 </button></li>
+      </ul>
+     </nav>
+    </div>
+   </header><!-- Main Content -->
+   <main id="main-content" class="w-full" role="main" aria-live="polite">
+    <div class="max-w-6xl mx-auto px-3 sm:px-4 py-5 sm:py-7"><!-- 美甲價目表 -->
+     <section id="tab-nails" class="tab-panel" aria-labelledby="tab-nails-label">
+      <div class="rounded-2xl border p-4 sm:p-6 card-hover" style="background-color: #f5f3ed; border-color: #d4cfc0;">
+       <div class="flex items-center gap-3 mb-5">
+        <svg class="w-6 h-6 flex-shrink-0" viewbox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#2b1e15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="22" y="8" width="10" height="28" rx="5" />
+          <rect x="32" y="12" width="10" height="28" rx="5" />
+          <path d="M20 32h24v14a8 8 0 0 1-8 8h-8a8 8 0 0 1-8-8V32z" />
+         </g>
+        </svg>
+        <div>
+         <h2 id="tab-nails-label" class="text-base sm:text-lg font-medium tracking-[0.08em]">美甲價目表</h2>
+         <p class="text-xs mt-0.5" style="color: #5a4d3f;">Nail Art Price List</p>
+        </div>
+       </div><!-- 手部 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">手部</h3>
+        <div class="space-y-2">
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">透明凝膠</span> <span class="text-xs sm:text-sm font-medium">$1,000</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">單色（可跳1色）</span> <span class="text-xs sm:text-sm font-medium">$1,300</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">貓眼</span> <span class="text-xs sm:text-sm font-medium">$1,400</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">鏡面 / 法式 / 漸層</span> <span class="text-xs sm:text-sm font-medium">$1,600</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">基礎造型</span> <span class="text-xs sm:text-sm font-medium">$1,400～1,600</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">進階造型</span> <span class="text-xs sm:text-sm font-medium">$1,600～1,800</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">高階造型</span> <span class="text-xs sm:text-sm font-medium">$1,800 up</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3 pt-2 border-t" style="border-color: #e7e4d9;"><span class="text-xs sm:text-sm" style="color: #5a4d3f;">跳色</span> <span class="text-xs sm:text-sm font-medium" style="color: #5a4d3f;">+$50</span>
+         </div>
+        </div>
+       </article><!-- 足部 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">足部</h3>
+        <div class="space-y-2">
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">透明凝膠</span> <span class="text-xs sm:text-sm font-medium">$1,300</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">基礎單色</span> <span class="text-xs sm:text-sm font-medium">$1,600</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">深層單色</span> <span class="text-xs sm:text-sm font-medium">$1,900</span>
+         </div>
+        </div>
+       </article><!-- 卸甲 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">卸甲</h3>
+        <div class="space-y-2">
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">本店卸甲</span> <span class="text-xs sm:text-sm font-medium">$300</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">他店卸甲</span> <span class="text-xs sm:text-sm font-medium">$400</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">本店他店純卸甲</span> <span class="text-xs sm:text-sm font-medium">$500</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">指甲油</span> <span class="text-xs sm:text-sm font-medium">$50</span>
+         </div>
+        </div>
+       </article><!-- 延甲 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">延甲</h3>
+        <div class="space-y-2">
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">手部延甲一指</span> <span class="text-xs sm:text-sm font-medium">$150</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">足部延甲一指</span> <span class="text-xs sm:text-sm font-medium">$200</span>
+         </div>
+        </div>
+       </article><!-- 保養 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">保養</h3>
+        <div class="space-y-2">
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">手部基礎保養</span> <span class="text-xs sm:text-sm font-medium">$600</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">足部基礎保養</span> <span class="text-xs sm:text-sm font-medium">$1,200</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">足部深層保養</span> <span class="text-xs sm:text-sm font-medium">$1,500</span>
+         </div>
+        </div>
+       </article><!-- 優惠 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">優惠</h3>
+        <ul class="space-y-2 text-xs sm:text-sm leading-relaxed">
+         <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>生日優惠：當月不限次數9折（不含保養、純卸甲）</span></li>
+         <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>儲值$3,000 ：贈【足部升級深層保養1次】或【本店卸甲1次】或【足部敷膜1次】擇一</span></li>
+         <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>儲值$5,000 ：贈【本店卸甲2次】或【本店卸甲1次＋足部升級深層保養1次】或【足部敷膜2次】擇一</span></li>
+        </ul>
+       </article>
+      </div>
+     </section><!-- 紋繡價目表 -->
+     <section id="tab-brows" class="tab-panel hidden" aria-labelledby="tab-brows-label">
+      <div class="rounded-2xl border p-4 sm:p-6 card-hover" style="background-color: #f5f3ed; border-color: #d4cfc0;">
+       <div class="flex items-center gap-3 mb-5">
+        <svg class="w-6 h-6 flex-shrink-0" viewbox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#2b1e15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="32" cy="32" r="20" />
+          <path d="M20 24c2-2 6-3 12-3s10 1 12 3" />
+          <circle cx="26" cy="30" r="2" fill="#2b1e15" />
+          <circle cx="38" cy="30" r="2" fill="#2b1e15" />
+          <path d="M26 42c2 2 4 3 6 3s4-1 6-3" />
+         </g>
+        </svg>
+        <div>
+         <h2 id="tab-brows-label" class="text-base sm:text-lg font-medium tracking-[0.08em]">紋繡價目表</h2>
+         <p class="text-xs mt-0.5" style="color: #5a4d3f;">Permanent Makeup Price List</p>
+        </div>
+       </div><!-- 眉部 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">眉部</h3>
+        <div class="space-y-2">
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">自然妝感粉霧眉<br><span class="text-[10px] sm:text-xs" style="color: #5a4d3f;">（含三個月內免費補色一次）</span></span> <span class="text-xs sm:text-sm font-medium whitespace-nowrap">$7,500</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">自然感線條飄眉<br><span class="text-[10px] sm:text-xs" style="color: #5a4d3f;">（含三個月內免費補色一次）</span></span> <span class="text-xs sm:text-sm font-medium whitespace-nowrap">$8,000</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3 pt-2 border-t" style="border-color: #e7e4d9;"><span class="text-xs sm:text-sm">舊客一年內補色</span> <span class="text-xs sm:text-sm font-medium">$4,500</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">舊客兩年內補色</span> <span class="text-xs sm:text-sm font-medium">$6,000</span>
+         </div>
+        </div>
+       </article><!-- 眼部 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">眼部</h3>
+        <div class="space-y-2">
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">原生自然感美睫線<br><span class="text-[10px] sm:text-xs" style="color: #5a4d3f;">（含三個月內免費補色一次）</span></span> <span class="text-xs sm:text-sm font-medium whitespace-nowrap">$5,000</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3 pt-2 border-t" style="border-color: #e7e4d9;"><span class="text-xs sm:text-sm">舊客一年內補色</span> <span class="text-xs sm:text-sm font-medium">$3,500</span>
+         </div>
+        </div>
+       </article>
+      </div>
+     </section><!-- 美國FT養色價目表 -->
+     <section id="tab-ft" class="tab-panel hidden" aria-labelledby="tab-ft-label">
+      <div class="rounded-2xl border p-4 sm:p-6 card-hover" style="background-color: #f5f3ed; border-color: #d4cfc0;">
+       <div class="flex items-center gap-3 mb-5">
+        <svg class="w-6 h-6 flex-shrink-0" viewbox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#2b1e15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M32 10v44M20 22l12-8 12 8M20 42l12 8 12-8" />
+          <circle cx="32" cy="32" r="6" />
+          <path d="M26 32h-8M38 32h8" />
+         </g>
+        </svg>
+        <div>
+         <h2 id="tab-ft-label" class="text-base sm:text-lg font-medium tracking-[0.08em]">美國FT養色價目表</h2>
+         <p class="text-xs mt-0.5" style="color: #5a4d3f;">USFT Price List</p>
+        </div>
+       </div><!-- 養色介紹 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">養色介紹</h3>
+        <div class="space-y-3">
+         <div>
+          <p class="text-xs sm:text-sm font-medium mb-2">美國FT養色產品</p>
+          <ul class="space-y-1 text-xs sm:text-sm leading-relaxed ml-2">
+           <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>生產地：美國</span></li>
+           <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>配方：亞洲</span></li>
+           <li class="flex items-start gap-2">
+            <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" viewbox="0 0 24 24" fill="none" stroke="#2b1e15" stroke-width="2"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" />
+            </svg><span>衛福部化妝品合格系統登入</span></li>
+           <li class="flex items-start gap-2">
+            <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" viewbox="0 0 24 24" fill="none" stroke="#2b1e15" stroke-width="2"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" />
+            </svg><span>美國ICMAD核准原料</span></li>
+           <li class="flex items-start gap-2">
+            <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" viewbox="0 0 24 24" fill="none" stroke="#2b1e15" stroke-width="2"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" />
+            </svg><span>美國FDA認證</span></li>
+           <li class="flex items-start gap-2">
+            <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" viewbox="0 0 24 24" fill="none" stroke="#2b1e15" stroke-width="2"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" />
+            </svg><span>SGS 389項檢驗合格</span></li>
+           <li class="flex items-start gap-2">
+            <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" viewbox="0 0 24 24" fill="none" stroke="#2b1e15" stroke-width="2"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" />
+            </svg><span>符合台灣安全標準</span></li>
+           <li class="flex items-start gap-2">
+            <svg class="w-3.5 h-3.5 flex-shrink-0 mt-0.5" viewbox="0 0 24 24" fill="none" stroke="#2b1e15" stroke-width="2"><path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" />
+            </svg><span>投保1000萬產品責任險</span></li>
+          </ul>
+         </div>
+         <div>
+          <p class="text-xs sm:text-sm font-medium mb-2">操作原理</p>
+          <p class="text-xs sm:text-sm leading-relaxed">由美國認證技師先為顧客操作，使用專業精華按照顧客本身顏色調配配方去調整暗沈。顧客返家使用專用的美國養色保養品進行後續的居家保養，還能持續養出更粉的顏色。</p>
+          <div class="rounded-lg p-3 mt-2 flex items-start gap-2" style="background-color: #e7e4d9;">
+           <svg class="w-4 h-4 flex-shrink-0 mt-0.5" viewbox="0 0 24 24" fill="#d4526e" stroke="#d4526e" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+           </svg>
+           <p class="text-xs sm:text-sm leading-relaxed">此技術只需操作一次！後續定期擦專用保養品即可讓顏色永久維持粉嫩！</p>
+          </div>
+         </div>
+         <div>
+          <p class="text-xs sm:text-sm font-medium mb-2">養色技術</p>
+          <p class="text-xs sm:text-sm leading-relaxed">於美國研發，經過2年的調整期，再經過1年的亞洲配方試驗，效果良好，更為醫美邀請合作項目。</p>
+         </div>
+         <div class="rounded-lg p-3 border-l-4" style="background-color: #fff5e6; border-color: #d4a574;">
+          <p class="text-xs sm:text-sm leading-relaxed flex items-start gap-2">
+           <svg class="w-4 h-4 flex-shrink-0 mt-0.5" viewbox="0 0 24 24" fill="none" stroke="#d4a574" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /> <line x1="12" y1="9" x2="12" y2="13" /> <line x1="12" y1="17" x2="12.01" y2="17" />
+           </svg><span>孕婦、哺乳期、乳暈雷射過後 暫不適此操作。</span></p>
+         </div>
+        </div>
+       </article><!-- 養色價格 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">養色價格</h3>
+        <div class="space-y-2">
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">乳暈養色</span> <span class="text-xs sm:text-sm font-medium">$16,800</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">私密處養色</span> <span class="text-xs sm:text-sm font-medium">$22,000</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">唇部養色</span> <span class="text-xs sm:text-sm font-medium">$9,990</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">腋下養色</span> <span class="text-xs sm:text-sm font-medium">$9,990</span>
+         </div>
+        </div>
+       </article><!-- 優惠 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">優惠</h3>
+        <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">暗沉處養色 3堂課程<br><span class="text-[10px] sm:text-xs" style="color: #5a4d3f;">（含唇部、腋下、鼠蹊部⋯）</span></span> <span class="text-xs sm:text-sm font-medium whitespace-nowrap">$19,980</span>
+        </div>
+       </article>
+      </div>
+     </section><!-- 無創基因水光價目表 -->
+     <section id="tab-hydra" class="tab-panel hidden" aria-labelledby="tab-hydra-label">
+      <div class="rounded-2xl border p-4 sm:p-6 card-hover" style="background-color: #f5f3ed; border-color: #d4cfc0;">
+       <div class="flex items-center gap-3 mb-5">
+        <svg class="w-6 h-6 flex-shrink-0" viewbox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#2b1e15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M32 10c-8 8-12 16-12 22a12 12 0 0 0 24 0c0-6-4-14-12-22z" />
+          <path d="M28 36c0-2 2-4 4-4s4 2 4 4" />
+          <circle cx="26" cy="28" r="1.5" fill="#2b1e15" />
+          <circle cx="38" cy="28" r="1.5" fill="#2b1e15" />
+         </g>
+        </svg>
+        <div>
+         <h2 id="tab-hydra-label" class="text-base sm:text-lg font-medium tracking-[0.08em]">無創基因水光價目表</h2>
+         <p class="text-xs mt-0.5" style="color: #5a4d3f;">Non-invasive Hydroglow Exosome Bio-jet Price List</p>
+        </div>
+       </div><!-- 介紹 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">無創水光 基因超導專利外泌水光</h3>
+        <div class="space-y-3">
+         <p class="text-xs sm:text-sm leading-relaxed">無創基因水光以高壓方式將精華霧化至極小分子噴射至真皮層，提升肌膚吸收率。無針無創無痕且高效替肌膚補充營養及水分。施作結束立即亮顏有感！</p>
+         <ul class="space-y-1 text-xs sm:text-sm leading-relaxed ml-2">
+          <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>台灣製專利技術外泌體</span></li>
+          <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>低溫保存 超高活性及純度精華</span></li>
+          <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>無添加 無細胞毒性 無刺激</span></li>
+          <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>高濃度高滲透率</span></li>
+         </ul>
+         <div class="rounded-lg p-3 border-l-4" style="background-color: #fff5e6; border-color: #d4a574;">
+          <p class="text-xs sm:text-sm leading-relaxed flex items-start gap-2">
+           <svg class="w-4 h-4 flex-shrink-0 mt-0.5" viewbox="0 0 24 24" fill="none" stroke="#d4a574" stroke-width="2"><circle cx="12" cy="12" r="10" /> <line x1="12" y1="8" x2="12" y2="12" /> <line x1="12" y1="16" x2="12.01" y2="16" />
+           </svg><span>每次課程皆含一支高濃度精華原液 未使用完畢可帶回做居家保養</span></p>
+         </div>
+        </div>
+       </article><!-- 課程 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">課程</h3>
+        <div class="space-y-2">
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">新客首次體驗價</span> <span class="text-xs sm:text-sm font-medium">$1,880</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">單次課程</span> <span class="text-xs sm:text-sm font-medium">$2,980</span>
+         </div>
+        </div>
+       </article><!-- 儲值方案 -->
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">儲值方案</h3>
+        <div class="space-y-2">
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">4堂課程</span> <span class="text-xs sm:text-sm font-medium">$10,000</span>
+         </div>
+         <div class="flex items-baseline justify-between gap-3"><span class="text-xs sm:text-sm">10堂課程</span> <span class="text-xs sm:text-sm font-medium">$22,000</span>
+         </div>
+         <div class="rounded-lg p-3 mt-3" style="background-color: #e7e4d9;">
+          <p class="text-xs sm:text-sm leading-relaxed">首次體驗即儲值以上方案再送1堂課程</p>
+         </div>
+        </div>
+       </article>
+      </div>
+     </section><!-- 預約須知 -->
+     <section id="tab-notice" class="tab-panel hidden" aria-labelledby="tab-notice-label">
+      <div class="rounded-2xl border p-4 sm:p-6 card-hover" style="background-color: #f5f3ed; border-color: #d4cfc0;">
+       <div class="flex items-center gap-3 mb-5">
+        <svg class="w-6 h-6 flex-shrink-0" viewbox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#2b1e15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="32" cy="32" r="20" />
+          <path d="M32 22v10l6 6" />
+          <path d="M22 12h20M22 52h20" />
+         </g>
+        </svg>
+        <div>
+         <h2 id="tab-notice-label" class="text-base sm:text-lg font-medium tracking-[0.08em]">預約須知</h2>
+         <p class="text-xs mt-0.5" style="color: #5a4d3f;">Booking Notice</p>
+        </div>
+       </div>
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">工作室資訊</h3>
+        <ul class="space-y-2 text-xs sm:text-sm leading-relaxed">
+         <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>完全預約制工作室</span></li>
+         <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>預約詢問請加入官方LINE諮詢</span></li>
+         <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>門口有專屬停車位</span></li>
+         <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>如有攜伴煩請提前告知</span></li>
+         <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>現場尖銳及特殊器材多 如有嬰兒及寵物請攜帶推車以策安全</span></li>
+         <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>支付方式：現金、台灣pay</span></li>
+        </ul>
+       </article>
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">服務注意事項</h3>
+        <ul class="space-y-2 text-xs sm:text-sm leading-relaxed">
+         <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>美甲服務不接待同業美甲師（含DIY者）</span></li>
+         <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>美甲款式歡迎事前傳圖片討論報價</span></li>
+         <li class="flex items-start gap-2"><span style="color: #5a4d3f;" class="mt-0.5">•</span> <span>如懷孕、有特殊疾病或身體不適狀況請提前告知且評估各項目是否施作</span></li>
+        </ul>
+       </article>
+      </div>
+     </section><!-- 預約方式 -->
+     <section id="tab-booking" class="tab-panel hidden" aria-labelledby="tab-booking-label">
+      <div class="rounded-2xl border p-4 sm:p-6 card-hover" style="background-color: #f5f3ed; border-color: #d4cfc0;">
+       <div class="flex items-center gap-3 mb-5">
+        <svg class="w-6 h-6 flex-shrink-0" viewbox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#2b1e15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="14" y="18" width="36" height="36" rx="2" />
+          <path d="M22 10v8M42 10v8M14 26h36" />
+          <circle cx="26" cy="36" r="2" fill="#2b1e15" />
+          <circle cx="32" cy="36" r="2" fill="#2b1e15" />
+          <circle cx="38" cy="36" r="2" fill="#2b1e15" />
+         </g>
+        </svg>
+        <div>
+         <h2 id="tab-booking-label" class="text-base sm:text-lg font-medium tracking-[0.08em]">預約方式</h2>
+         <p class="text-xs mt-0.5" style="color: #5a4d3f;">Booking Method</p>
+        </div>
+       </div>
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">如何預約</h3>
+        <p class="text-xs sm:text-sm mb-3" style="color: #5a4d3f;">至官方LINE填寫預約表單</p><a href="https://lin.ee/0r7pQok" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-colors focus-outline" style="background-color: #2b1e15; color: white;">
+         <svg class="w-5 h-5" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+         </svg> 點擊加入官方LINE預約 </a>
+       </article>
+      </div>
+     </section><!-- 線上購物 -->
+     <section id="tab-shop" class="tab-panel hidden" aria-labelledby="tab-shop-label">
+      <div class="rounded-2xl border p-4 sm:p-6 card-hover" style="background-color: #f5f3ed; border-color: #d4cfc0;">
+       <div class="flex items-center gap-3 mb-5">
+        <svg class="w-6 h-6 flex-shrink-0" viewbox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#2b1e15" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22l4-10h32l4 10" />
+          <path d="M12 22v26a4 4 0 0 0 4 4h32a4 4 0 0 0 4-4V22" />
+          <path d="M22 32c0 4 2 8 6 8h8c4 0 6-4 6-8" />
+         </g>
+        </svg>
+        <div>
+         <h2 id="tab-shop-label" class="text-base sm:text-lg font-medium tracking-[0.08em]">線上購物</h2>
+         <p class="text-xs mt-0.5" style="color: #5a4d3f;">Online Shop</p>
+        </div>
+       </div>
+       <article class="mt-4 bg-white rounded-xl border p-3 sm:p-4" style="border-color: #d4cfc0;">
+        <h3 class="text-sm sm:text-base font-medium mb-3 pb-2 border-b" style="border-color: #e7e4d9;">店內熱銷好物推薦</h3>
+        <p class="text-xs sm:text-sm mb-3" style="color: #5a4d3f;">產品皆為店內優惠價</p><a href="https://myship.7-11.com.tw/general/detail/GM2024121900001?utm_source=ig&amp;utm_medium=social&amp;utm_content=link_in_bio&amp;fbclid=PAZXh0bgNhZW0CMTEAAabXJ0YwZhcHBfaWQPMTI0MDI0NTc0Mjg3NDE0AAGnvsjFk2TgU1rYuaRtmpOxDwknMTPpclrfM_kUemrBUtawPivlWX6r0wYBpfo_aem_m5issvcCoGRdCxOaD-uO8A" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-colors focus-outline" style="background-color: #2b1e15; color: white;">
+         <svg class="w-5 h-5" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1" /> <circle cx="20" cy="21" r="1" /> <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+         </svg> 熱銷好物自助下單 </a>
+       </article>
+      </div>
+     </section>
+    </div>
+   </main><!-- Footer -->
+   <footer class="w-full border-t" style="border-color: #d4cfc0; background-color: #e7e4d9;" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-3 sm:px-4 py-3 flex flex-col sm:flex-row items-center justify-between gap-2 text-[10px] sm:text-xs" style="color: #5a4d3f;">
+     <p id="footer-text" class="text-center sm:text-left">petit matin atelier · 美好從清晨開始</p>
+     <p class="text-center sm:text-right">© 2024 All Rights Reserved</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      site_title: "petit matin atelier",
+      site_subtitle: "Beauty · Care · Wellness",
+      footer_text: "petit matin atelier · 美好從清晨開始",
+      background_color: "#e7e4d9",
+      surface_color: "#f5f3ed",
+      text_color: "#2b1e15",
+      primary_action_color: "#2b1e15",
+      secondary_action_color: "#5a4d3f",
+      font_family: "Noto Sans TC",
+      font_size: 14
+    };
+
+    async function applyConfig(config) {
+      const finalConfig = Object.assign({}, defaultConfig, config || {});
+      const {
+        site_title,
+        site_subtitle,
+        footer_text,
+        background_color,
+        surface_color,
+        text_color,
+        primary_action_color,
+        secondary_action_color,
+        font_family,
+        font_size
+      } = finalConfig;
+
+      const app = document.getElementById("app");
+      const siteTitleEl = document.getElementById("site-title");
+      const siteSubtitleEl = document.getElementById("site-subtitle");
+      const footerTextEl = document.getElementById("footer-text");
+
+      if (app) {
+        app.style.backgroundColor = background_color;
+        app.style.color = text_color;
+        const baseFontStack = "system-ui, -apple-system, BlinkMacSystemFont, 'Noto Sans TC', sans-serif";
+        app.style.fontFamily = font_family ? font_family + ", " + baseFontStack : baseFontStack;
+      }
+
+      const baseSize = Number(font_size) || defaultConfig.font_size || 14;
+      const headingEls = document.querySelectorAll("h2");
+      const h3Els = document.querySelectorAll("h3");
+      const bodyEls = document.querySelectorAll("p:not(.text-xs), li, span:not(.text-xs)");
+      
+      headingEls.forEach((el) => {
+        if (!el.classList.contains("store-title")) {
+          el.style.fontSize = baseSize * 1.2 + "px";
+        }
+      });
+      h3Els.forEach((el) => {
+        el.style.fontSize = baseSize * 1.05 + "px";
+      });
+      bodyEls.forEach((el) => {
+        if (!el.closest("h1, h2, h3")) {
+          el.style.fontSize = baseSize + "px";
+        }
+      });
+
+      const surfaceCards = document.querySelectorAll('[style*="background-color: #f5f3ed"]');
+      surfaceCards.forEach((card) => {
+        card.style.backgroundColor = surface_color;
+      });
+
+      if (siteTitleEl) {
+        siteTitleEl.textContent = site_title || defaultConfig.site_title;
+      }
+      if (siteSubtitleEl) {
+        siteSubtitleEl.textContent = site_subtitle || defaultConfig.site_subtitle;
+      }
+      if (footerTextEl) {
+        footerTextEl.textContent = footer_text || defaultConfig.footer_text;
+      }
+
+      updateActiveTabStyles(primary_action_color, secondary_action_color, text_color);
+    }
+
+    function updateActiveTabStyles(primary_action_color, secondary_action_color, text_color) {
+      const buttons = document.querySelectorAll(".tab-btn");
+      buttons.forEach((btn) => {
+        const isActive = btn.getAttribute("data-active") === "true";
+        if (isActive) {
+          btn.style.backgroundColor = primary_action_color;
+          btn.style.borderColor = secondary_action_color;
+          btn.style.color = "#ffffff";
+        } else {
+          btn.style.backgroundColor = "transparent";
+          btn.style.borderColor = "transparent";
+          btn.style.color = text_color;
+        }
+      });
+    }
+
+    function initTabs() {
+      const buttons = document.querySelectorAll(".tab-btn");
+      const panels = document.querySelectorAll(".tab-panel");
+
+      function showTab(tabName) {
+        panels.forEach((panel) => {
+          if (panel.id === "tab-" + tabName) {
+            panel.classList.remove("hidden");
+          } else {
+            panel.classList.add("hidden");
+          }
+        });
+        buttons.forEach((btn) => {
+          const isActive = btn.getAttribute("data-tab") === tabName;
+          btn.setAttribute("data-active", isActive ? "true" : "false");
+        });
+        const config = (window.elementSdk && window.elementSdk.config) || defaultConfig;
+        updateActiveTabStyles(
+          config.primary_action_color || defaultConfig.primary_action_color,
+          config.secondary_action_color || defaultConfig.secondary_action_color,
+          config.text_color || defaultConfig.text_color
+        );
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", function() {
+          const tab = this.getAttribute("data-tab");
+          if (tab) {
+            showTab(tab);
+          }
+        });
+      });
+
+      showTab("nails");
+    }
+
+    (async function initElementSdk() {
+      if (!window.elementSdk) {
+        applyConfig(defaultConfig);
+        initTabs();
+        return;
+      }
+
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange: async (config) => {
+          await applyConfig(config);
+        },
+        mapToCapabilities: (config) => {
+          const current = Object.assign({}, defaultConfig, config || {});
+          const recolorables = [
+            {
+              get: () => current.background_color || defaultConfig.background_color,
+              set: (value) => {
+                const newVal = value || defaultConfig.background_color;
+                window.elementSdk.setConfig({ background_color: newVal });
+              }
+            },
+            {
+              get: () => current.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                const newVal = value || defaultConfig.surface_color;
+                window.elementSdk.setConfig({ surface_color: newVal });
+              }
+            },
+            {
+              get: () => current.text_color || defaultConfig.text_color,
+              set: (value) => {
+                const newVal = value || defaultConfig.text_color;
+                window.elementSdk.setConfig({ text_color: newVal });
+              }
+            },
+            {
+              get: () => current.primary_action_color || defaultConfig.primary_action_color,
+              set: (value) => {
+                const newVal = value || defaultConfig.primary_action_color;
+                window.elementSdk.setConfig({ primary_action_color: newVal });
+              }
+            },
+            {
+              get: () => current.secondary_action_color || defaultConfig.secondary_action_color,
+              set: (value) => {
+                const newVal = value || defaultConfig.secondary_action_color;
+                window.elementSdk.setConfig({ secondary_action_color: newVal });
+              }
+            }
+          ];
+
+          const fontEditable = {
+            get: () => current.font_family || defaultConfig.font_family,
+            set: (value) => {
+              const newVal = value || defaultConfig.font_family;
+              window.elementSdk.setConfig({ font_family: newVal });
+            }
+          };
+
+          const fontSizeable = {
+            get: () => current.font_size || defaultConfig.font_size,
+            set: (value) => {
+              const num = typeof value === "number" && value > 8 ? value : 14;
+              window.elementSdk.setConfig({ font_size: num });
+            }
+          };
+
+          return {
+            recolorables,
+            borderables: [],
+            fontEditable,
+            fontSizeable
+          };
+        },
+        mapToEditPanelValues: (config) => {
+          const c = Object.assign({}, defaultConfig, config || {});
+          return new Map([
+            ["site_title", c.site_title],
+            ["site_subtitle", c.site_subtitle],
+            ["footer_text", c.footer_text]
+          ]);
+        }
+      });
+
+      await applyConfig(window.elementSdk.config);
+      initTabs();
+    })();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a836cb7c5d7f1d4',t:'MTc2NDc2ODY5MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
